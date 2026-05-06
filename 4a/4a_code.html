@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MobiShop - E-commerce Mobile</title>
+    
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        .product-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+        .price {
+            color: #d9534f;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        /* Styling to make the footer text look a bit cleaner */
+        .footer-text {
+            font-size: 0.8em;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme="b">
+            <h1>MobiShop</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-btn-active ui-icon-home ui-btn-icon-top">Home</a></li>
+                    <li><a href="#cart" class="ui-icon-shop ui-btn-icon-top">Cart (2)</a></li>
+                    <li><a href="#account" class="ui-icon-user ui-btn-icon-top">Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <form class="ui-filterable">
+                <input id="myFilter" data-type="search" placeholder="Search for products...">
+            </form>
+            
+            <ul data-role="listview" data-inset="true" data-filter="true" data-input="#myFilter">
+                <li data-role="list-divider">Featured Electronics</li>
+                <li>
+                    <a href="#product-details">
+                        <img src="https://placehold.co/100x100?text=Phone" class="product-img">
+                        <h2>Smartphone Pro Max</h2>
+                        <p>Latest model with advanced camera.</p>
+                        <p class="price">$899.00</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#product-details">
+                        <img src="https://placehold.co/100x100?text=Laptop" class="product-img">
+                        <h2>Ultrabook X1</h2>
+                        <p>Lightweight and powerful for professionals.</p>
+                        <p class="price">$1200.00</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#product-details">
+                        <img src="https://placehold.co/100x100?text=Watch" class="product-img">
+                        <h2>SmartWatch Series 5</h2>
+                        <p>Fitness tracking and heart monitor.</p>
+                        <p class="price">$250.00</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-theme="b" style="text-align: center;">
+            <div style="margin-top: 10px;">
+                <a href="#" class="ui-btn ui-corner-all ui-icon-mail ui-btn-icon-notext ui-btn-inline">Email</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-camera ui-btn-icon-notext ui-btn-inline">Instagram</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-action ui-btn-icon-notext ui-btn-inline">Twitter</a>
+            </div>
+            <p class="footer-text">&copy; 2026 MobiShop. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="product-details">
+        <div data-role="header" data-theme="b">
+            <a href="#home" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Back</a>
+            <h1>Product Info</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div style="text-align: center;">
+                <img src="https://placehold.co/300x200?text=Phone" style="max-width: 100%; height: auto; border-radius: 8px;">
+            </div>
+            <h2>Smartphone Pro Max</h2>
+            <p class="price">$899.00</p>
+            <p>Experience the ultimate in mobile technology with the Smartphone Pro Max. Features a stunning 6.7-inch OLED display, all-day battery life, and a pro-grade camera system.</p>
+            
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Color:</legend>
+                <input type="radio" name="color-choice" id="color-black" value="black" checked="checked">
+                <label for="color-black">Black</label>
+                <input type="radio" name="color-choice" id="color-silver" value="silver">
+                <label for="color-silver">Silver</label>
+            </fieldset>
+
+            <a href="#cart" class="ui-btn ui-btn-b ui-corner-all ui-icon-shop ui-btn-icon-left" data-transition="slide">Add to Cart</a>
+        </div>
+
+        <div data-role="footer" data-theme="b" style="text-align: center;">
+            <div style="margin-top: 10px;">
+                <a href="#" class="ui-btn ui-corner-all ui-icon-mail ui-btn-icon-notext ui-btn-inline">Email</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-camera ui-btn-icon-notext ui-btn-inline">Instagram</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-action ui-btn-icon-notext ui-btn-inline">Twitter</a>
+            </div>
+            <p class="footer-text">&copy; 2026 MobiShop. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="cart">
+        <div data-role="header" data-theme="b">
+            <h1>Your Cart</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-icon-home ui-btn-icon-top">Home</a></li>
+                    <li><a href="#cart" class="ui-btn-active ui-icon-shop ui-btn-icon-top">Cart (2)</a></li>
+                    <li><a href="#account" class="ui-icon-user ui-btn-icon-top">Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider">Items in Cart</li>
+                <li>
+                    <h2>Smartphone Pro Max</h2>
+                    <p>Color: Black</p>
+                    <p class="ui-li-aside"><strong>$899.00</strong></p>
+                </li>
+                <li>
+                    <h2>Protective Case</h2>
+                    <p>Color: Clear</p>
+                    <p class="ui-li-aside"><strong>$25.00</strong></p>
+                </li>
+            </ul>
+            
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h3>Total: <span style="float:right; color:#d9534f;">$924.00</span></h3>
+            </div>
+            <br>
+            <a href="#" class="ui-btn ui-btn-b ui-corner-all">Proceed to Checkout</a>
+        </div>
+
+        <div data-role="footer" data-theme="b" style="text-align: center;">
+            <div style="margin-top: 10px;">
+                <a href="#" class="ui-btn ui-corner-all ui-icon-mail ui-btn-icon-notext ui-btn-inline">Email</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-camera ui-btn-icon-notext ui-btn-inline">Instagram</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-action ui-btn-icon-notext ui-btn-inline">Twitter</a>
+            </div>
+            <p class="footer-text">&copy; 2026 MobiShop. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="account">
+        <div data-role="header" data-theme="b">
+            <h1>Account</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-icon-home ui-btn-icon-top">Home</a></li>
+                    <li><a href="#cart" class="ui-icon-shop ui-btn-icon-top">Cart (2)</a></li>
+                    <li><a href="#account" class="ui-btn-active ui-icon-user ui-btn-icon-top">Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h2>Log In</h2>
+            <form method="post" action="#">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" placeholder="Enter username...">
+                
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Enter password...">
+                
+                <input type="submit" value="Log In" data-theme="b">
+            </form>
+
+            <hr style="margin: 20px 0;">
+            <p style="text-align: center;">Don't have an account?</p>
+            <a href="#register" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-left" data-transition="slide">Create New Account</a>
+        </div>
+
+        <div data-role="footer" data-theme="b" style="text-align: center;">
+            <div style="margin-top: 10px;">
+                <a href="#" class="ui-btn ui-corner-all ui-icon-mail ui-btn-icon-notext ui-btn-inline">Email</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-camera ui-btn-icon-notext ui-btn-inline">Instagram</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-action ui-btn-icon-notext ui-btn-inline">Twitter</a>
+            </div>
+            <p class="footer-text">&copy; 2026 MobiShop. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="register">
+        <div data-role="header" data-theme="b">
+            <a href="#account" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all" data-transition="slide" data-direction="reverse">Back</a>
+            <h1>Register</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <form method="post" action="#">
+                <label for="reg-name">Full Name:</label>
+                <input type="text" name="reg-name" id="reg-name" placeholder="John Doe">
+                
+                <label for="reg-email">Email Address:</label>
+                <input type="email" name="reg-email" id="reg-email" placeholder="john@example.com">
+                
+                <label for="reg-password">Password:</label>
+                <input type="password" name="reg-password" id="reg-password" placeholder="Create a password...">
+
+                <label for="reg-confirm">Confirm Password:</label>
+                <input type="password" name="reg-confirm" id="reg-confirm" placeholder="Type password again...">
+                
+                <input type="submit" value="Sign Up" data-theme="b">
+            </form>
+        </div>
+
+        <div data-role="footer" data-theme="b" style="text-align: center;">
+            <div style="margin-top: 10px;">
+                <a href="#" class="ui-btn ui-corner-all ui-icon-mail ui-btn-icon-notext ui-btn-inline">Email</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-camera ui-btn-icon-notext ui-btn-inline">Instagram</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-action ui-btn-icon-notext ui-btn-inline">Twitter</a>
+            </div>
+            <p class="footer-text">&copy; 2026 MobiShop. All rights reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>
